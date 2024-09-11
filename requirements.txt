@@ -1,0 +1,12 @@
+Flask
+Flask-SQLAlchemy
+Flask-Migrate
+Flask-Mail
+PyJWT
+Werkzeug
+alembic
+python-dotenv
+psycopg2-binary
+bcrypt
+twilio
+requests
