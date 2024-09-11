@@ -4,6 +4,7 @@ from flask_mail import Mail
 from models.codewents_models import db
 from config import Config
 from auth_blueprint import auth_bp
+import os
 #import logging
 
 # Enable detailed logging for SQLAlchemy
