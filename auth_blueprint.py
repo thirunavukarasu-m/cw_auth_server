@@ -106,7 +106,7 @@ def register():
             return jsonify({'error': 'Passwords do not match'}), 400
         
         # Simulate sending the request to the main server (internal request)
-        main_server_url = 'http://127.0.0.1:5002/main/register'  # Update with actual IP and port of main_server
+        main_server_url = 'https://cw-main-server.onrender.com/main/register'  # Update with actual IP and port of main_server
         response = requests.post(main_server_url, json={
             'username': data['username'],
             'email': data['email'],
@@ -153,7 +153,7 @@ def login():
             return jsonify({"error": "Invalid email format"}), 400
 
         # Internal request to main/login to verify user's credentials
-        main_server_url = 'http://127.0.0.1:5002/main/login'  # Update with actual IP and port of main_server
+        main_server_url = 'https://cw-main-server.onrender.com/main/login'  # Update with actual IP and port of main_server
         response = requests.post(main_server_url, json={
                 'email': data['email'],
                 'password': data['password']
@@ -192,7 +192,7 @@ def forgot_password():
             return jsonify({'error': 'Invalid email format'}), 400
 
         # Simulate sending the request to the main server (internal request)
-        main_server_url = 'http://127.0.0.1:5002/main/forgot-password'  # Update with actual IP and port of main_server
+        main_server_url = 'https://cw-main-server.onrender.com/forgot-password'  # Update with actual IP and port of main_server
         response = requests.post(main_server_url, json={'email': email})
 
         #Return the content, not the response object
@@ -227,7 +227,7 @@ def reset_password():
             return jsonify({'error': 'Passwords do not match'}), 400
 
         # Simulate sending the request to the main server (internal request)
-        main_server_url = 'http://127.0.0.1:5002/main/reset-password'  # Update with actual IP and port of main_server
+        main_server_url = 'https://cw-main-server.onrender.com/reset-password'  # Update with actual IP and port of main_server
         response = requests.post(main_server_url, json={
                 'token': reset_token,
                 'new_password': new_password,
@@ -266,7 +266,7 @@ def change_password_request():
             return jsonify({'error': 'Invalid email format'}), 400
 
         # Simulate sending the request to the main server (internal request)
-        main_server_url = 'http://127.0.0.1:5002/main/change-password-request'  # Update with actual IP and port of main_server
+        main_server_url = 'https://cw-main-server.onrender.com/change-password-request'  # Update with actual IP and port of main_server
         response = requests.post(main_server_url, json={'email': email})
 
         #Return the content, not the response object
@@ -302,7 +302,7 @@ def change_password():
             return jsonify({'error': 'Passwords do not match'}), 400
 
         # Simulate sending the request to the main server (internal request)
-        main_server_url = 'http://127.0.0.1:5002/main/change-password'  # Update with actual IP and port of main_server
+        main_server_url = 'https://cw-main-server.onrender.com/change-password'  # Update with actual IP and port of main_server
         response = requests.post(main_server_url, json={
                 'token': reset_token,
                 'current_password': current_password,
@@ -372,7 +372,7 @@ def register_with_mobile():
             return jsonify({'error': 'OTP has expired'}), 400
 
         # Step 2: If OTP is valid, send an internal request to the main server to register the user
-        main_server_url = 'http://127.0.0.1:5002/main/register-with-mobile'
+        main_server_url = 'https://cw-main-server.onrender.com/register-with-mobile'
         
         try:
             response = requests.post(main_server_url, json={
